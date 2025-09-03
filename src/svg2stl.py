@@ -14,9 +14,9 @@ def parse_svg_into_steps(path: str) -> list:
     path_str = minidom.parse(path).getElementsByTagName("path")[0].getAttribute("d")
     return parse_path(path_str)
 
+def run_code():
 
-if __name__ == "__main__":
-
+def main():
     parser = argparse.ArgumentParser(description="Convert an SVG into an STL.")
     parser.add_argument("svg_path", type=str, help="path towards an SVG file")
     parser.add_argument("--thickness", default=1, type=float)
@@ -133,3 +133,6 @@ if __name__ == "__main__":
 
     if args.show:
         gmsh.fltk.run()
+
+if __name__ == "__main__":
+    main()
