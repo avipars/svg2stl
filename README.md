@@ -2,13 +2,13 @@
 
 This repository provides a script which takes as input an SVG such as this one:
 
-![example.svg](example.svg)
+![example.svg](tests/example.svg)
 
 It outputs an [STL file](https://www.wikiwand.com/en/STL_(file_format)) like this:
 
-![example.png](example.png)
+![example.png](tests/example.png)
 
-You can also see an interactive version [here](example.stl).
+You can also see an interactive version [here](tests/example.stl).
 
 The resulting solid is a cuboid with holes in it. It essentially adds a third dimension to the SVG file. The purpose of the output STL is to be fed into a 3D printer. The end goal is to make a physical [stencil](https://www.wikiwand.com/en/Stencil) for artistic purposes.
 
@@ -42,7 +42,7 @@ In addition to saving the result, you can show what the rendered solid looks lik
 python svg2stl.py example.svg --thickness 4 --show
 ```
 
-Some SVGs have bogus instructions at the beginning of their path definition. For instance, the first shape of [example_bogus.svg](example_bogus.svg) is bogus and cause the rendering to fail. Skipping it does the trick:
+Some SVGs have bogus instructions at the beginning of their path definition. For instance, the first shape of [example_bogus.svg](tests/example_bogus.svg) is bogus and cause the rendering to fail. Skipping it does the trick:
 
 ```sh
 python svg2stl.py example_bogus.svg --skip 1
