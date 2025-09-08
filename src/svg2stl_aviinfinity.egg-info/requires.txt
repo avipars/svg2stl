@@ -1,3 +1,0 @@
-numpy
-python-gmsh
-svg.path
